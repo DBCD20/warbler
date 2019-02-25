@@ -1,7 +1,9 @@
 const db    = require('../models');
 const jwt   = require('jsonwebtoken');
 
-exports.signin = function(){};
+exports.signin = async function(req, res, next){
+    
+};
 
 exports.signup = async function(req, res, next){
     try{
