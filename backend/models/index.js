@@ -8,5 +8,5 @@ mongoose.connect('mongodb://localhost/warbler', {
     useNewUrlParser: true
 });
 
-module.exports.User = require('./user.js');
-module.exports.Message = require('./message')
+module.exports.User = require('./user');
+module.exports.Message = require('./message');

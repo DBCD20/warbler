@@ -12,7 +12,7 @@ exports.signin = async function(req, res, next){
             let token = jwt.sign({
                 id, username, profileImageUrl
             }, process.env.SECRET_KEY)
-            res.status.json({ id, username, profileImageUrl, token })
+            res.status(200).json({ id, username, profileImageUrl, token })
         } else {
             return next({
                 status: 400,

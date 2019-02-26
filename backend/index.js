@@ -6,13 +6,15 @@ const CORS          = require('cors');
 const bodyParser    = require('body-parser');
 const errorHandler  = require('./handlers/error');
 const authRoutes    = require('./routes/auth');
+const messagesRoutes = require('./routes/messages');
 
-const PORT      = 8081;
+const PORT = 8081;
 
 app.use(CORS());
 app.use(bodyParser.json());
 
 app.use('/api/routes/auth', authRoutes);
+app.use('/api/user/:id/messages', messagesRoutes);
 
 app.use(function(req,res, next){
     let err = new Error('Not Found');
