@@ -12,3 +12,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.homepage {
+  position: relative;
+  left: 20px;
+  max-width: 500px;
+  top: 50%;
+  transform: translateY(-80%);
+}
+.main {
+  height: 100vh;
+}
+.subtitle {
+  background: rgba(0,0,0,0.8);
+  margin-bottom: 12px;
+  box-shadow: 0px 60px rgba(0,0,0,0.5);
+  color: white;
+  padding: 10px;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.2em;
+  font-weight: 700;
+  text-align: center;
+}
+form {
+  position: relative;
+}
+#wrap {
+
+  transition: 1s;
+  height: 100vh;
+}
+.form-wrap {
+  background: rgba(0,0,0,1);
+  color: white;
+  padding: 40px 20px!important;
+  min-height: 400px;
+}
+.form-wrap input:last-child {
+  margin-bottom: 70px;
+}
