@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { removeError } from '../store/actions/error';
 
 export default class AuthForm extends Component {
     constructor(props){
@@ -15,16 +16,42 @@ export default class AuthForm extends Component {
             [e.target.name]: e.target.value
         })
     }
+    handleSubmit = e => {
+        e.preventDefault();
+        const authType = this.props.signUp ? "signup" : "signin";
+        this.props
+        .onAuth(authType, this.state)
+        .then(() => {
+            this.props.history.push("/");
+        }).catch(() =>{
+            return;
+        });
+    }
     render(){
         const { email, username, password, profileImageUrl } = this.state;
-        const { heading, buttonText, signUp } = this.props
+        const { heading, buttonText, signUp, errors, history, removeError } = this.props
+        
+        history.listen(() => {
+            removeError();
+        })
+        
         return (
             <div className="justify-content-md-center text-left d-flex align-items-center" id="wrap">
-            <div className="col-md-7 mx-auto p-1"  style={{background: "linear-gradient(45deg, rgba(192,36,37,0.7), rgba(240,203,53,0.7))"}}>
-                <div className="form-wrap  shadow" >
+            <div className="col-md-7 mx-auto p-1" >
+            {errors.message && (<div className="alert alert-danger">{errors.message}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>         
+                    </div>)}
+
+                <div className="form-wrap mx-auto shadow" >
                     
                     <form onSubmit={ this.handleSubmit }>
-                        <h2 className="text-center display-4">{ heading }</h2>
+                    
+                    <h2 className="text-center display-4">{ heading }</h2>
+                        
+                       
+                        
                         <label className="lead mt-4 text-warning" htmlFor="email">Email</label>
                         <input 
                             className="form-control border-0 py-2 "
@@ -38,14 +65,14 @@ export default class AuthForm extends Component {
                         <label className="lead mt-4 text-warning" htmlFor="password">Password</label>
                         <input 
                             className="form-control py-2 border-0 d-block"
-                            type="text"
+                            type="password"
                             id="password"
                             name="password"
                             onChange={ this.handleChange }
                             value={ password }
                             
                         />
-                        {!signUp && (<div>Hello</div>)}
+
                         {signUp && (
                         <div>
                             <label className="lead mt-4 text-warning" htmlFor="username">Username</label>
