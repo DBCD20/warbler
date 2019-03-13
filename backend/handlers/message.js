@@ -29,10 +29,10 @@ exports.getMessage = async function(){
         return next(err)
     }
 }
-exports.deleteMessage = async function(){
+exports.deleteMessage = async function(req, res, next){
     try{
-        let foundMessage = await db.Message.findById(req.params._id)
-        await foundMessage.remove();
+        let foundMessage = await db.Message.findByIdAndRemove(req.params.message_id);
+        return res.status(200).json(foundMessage);
     }
     catch(err){
         next(err)

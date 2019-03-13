@@ -1,9 +1,12 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 .homepage {
   max-width: 500px;
 }
 .main {
-  height: 100vh;
+  height: 100%;
 }
 .subtitle {
   background: rgba(0,0,0,0.8);
@@ -36,4 +39,14 @@ form {
 }
 .form-wrap input:last-child {
   margin-bottom: 70px;
+}
+.delete-btn {
+  bottom: 1em;
+  right: 1em;
+  color: #dfe0e1 !important;
+  font-size: 0.87em;
+}
+.delete-btn:hover {
+  color: red !important;
+  cursor: pointer
 }

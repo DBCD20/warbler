@@ -29,7 +29,10 @@ const App = () => (
         <div className="mx-auto" style={{
         background: "url('https://images.pexels.com/photos/869258/pexels-photo-869258.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center",
         backgroundSize: "cover",
-        width: "100%" }}>
+        backgroundAttachment: "fixed",
+        width: "100%",
+        minHeight: "100vh", 
+         }}>
           <Navbar />  
           <Main />
         </div>

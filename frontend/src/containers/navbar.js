@@ -12,7 +12,7 @@ import Logo  from '../images/bird.png';
     }
     render(){
         return (
-            <div className="col-md-12" style={{backgroundColor: 'black'}}>
+            <div className="col-md-12 position-fixed" style={{backgroundColor: 'black', zIndex: "99"}}>
                 <nav className="navbar navbar-expand navbar-dark px-4 shadow  container" style={{lineHeight: "40px", background: "rgb(0, 1, 5)"}}>
                     <div className="container-fluid">
                         <Link to="/" className="navbar-brand">
