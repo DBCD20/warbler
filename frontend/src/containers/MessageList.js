@@ -20,8 +20,8 @@ class MessagesList extends Component {
         />
       ));
       return (
-        <div className="bg-light" style={{width: "100%"}}>
-          <div className="d-flex justify-content-center align-items-center" style={{height: "100vh"}}> 
+        <div className="">
+          <div className="">
             <ul className="list-group" id="messages">
                 {messageList}
             </ul>

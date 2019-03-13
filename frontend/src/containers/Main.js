@@ -6,6 +6,8 @@ import Homepage                      from "../components/Homepage";
 import AuthForm                      from "../components/AuthForm";
 import { authUser }                  from "../store/actions/auth";
 import { removeError }               from "../store/actions/error";
+import  withAuth                     from "../hocs/withAuth";
+import  MessagesForm                from "../containers/message"
 
 
 const Main = props => {
@@ -18,6 +20,7 @@ const Main = props => {
                 <Route path="/signup"  render={props => (
                     <AuthForm signUp removeError = { removeError } errors = { error } buttonText="Sign me up!" onAuth={ authUser } {...props}  heading="Join Warbler today" />
                 )}/>
+                <Route path="/users/:id/messages/new" component={ withAuth(MessagesForm) } />
             </Switch>
         </div>
     )
