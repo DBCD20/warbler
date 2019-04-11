@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from "../store";
 import { BrowserRouter as Router } from "react-router-dom";
 import Main from './Main';
-
+import BackgroundImage from '../images/background-photo-sm.jpg';
 import Navbar from './navbar';
 import { setAuthorizationToken, setCurrentUser } from '../store/actions/auth';
 import jwtDecode from 'jwt-decode';
@@ -26,10 +26,8 @@ const App = () => (
     <Router>
     <div>
             
-        <div className="mx-auto" style={{
-        background: "url('https://images.pexels.com/photos/869258/pexels-photo-869258.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center",
-        backgroundSize: "cover",
-        backgroundAttachment: "fixed",
+        <div className="mx-auto" id="App" style={{
+
         width: "100%",
         minHeight: "100vh", 
          }}>

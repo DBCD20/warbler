@@ -2,11 +2,41 @@
   box-sizing: border-box;
 }
 
+#MessageTimeline {
+  min-height: 100vh;
+  background: linear-gradient(40deg, rgba(248,249,250,0.97), rgba(223,224,225,0.95));
+}
+
+@media (max-width: 640px){
+  #App {
+    background: url('./images/background-photo-sm.jpg') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  #MessageTimeline {
+    padding: 0 2em;
+    background: #f3f3f3 !important;
+  }
+}
+@media (min-width: 641px){
+  #App {
+    background: url('./images/background-photo-min.jpeg') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+#messages {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .homepage {
   max-width: 500px;
 }
 .main {
-  height: 100%;
+  height: 100vh;
 }
 .subtitle {
   background: rgba(0,0,0,0.8);

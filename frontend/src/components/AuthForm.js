@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { removeError } from '../store/actions/error';
+
 
 export default class AuthForm extends Component {
     constructor(props){
@@ -37,8 +37,8 @@ export default class AuthForm extends Component {
         
         return (
             <div className="justify-content-md-center text-left d-flex align-items-center" id="wrap">
-            <div className="col-md-7 mx-auto p-1" >
-            {errors.message && (<div className="alert alert-danger">{errors.message}
+            <div className="col-xl-8 mx-auto" >
+            {errors.message && (<div className="alert col-sm-8 col-md-6 col-xl-5 mx-auto alert-warning">{errors.message}
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>         
@@ -48,7 +48,7 @@ export default class AuthForm extends Component {
                     
                     <form onSubmit={ this.handleSubmit }>
                     
-                    <h2 className="text-center display-4">{ heading }</h2>
+                    <h2 className="text-center h1">{ heading }</h2>
                         
                        
                         
@@ -64,7 +64,7 @@ export default class AuthForm extends Component {
 
                         <label className="lead mt-4 text-warning" htmlFor="password">Password</label>
                         <input 
-                            className="form-control py-2 border-0 d-block"
+                            className="form-control mb-4 py-2 border-0 d-block"
                             type="password"
                             id="password"
                             name="password"
@@ -98,7 +98,10 @@ export default class AuthForm extends Component {
                         </div>
                         
                         )}
-                        <button className="shadow-lg border-0 mt-4 btn btn-block py-2 btn-warning lead">{ buttonText }</button>
+                        <div style={{marginTop: "4em"}}>
+                            <button  className="btn btn-block py-2 btn-warning h2">{ buttonText }</button>
+                        </div>
+                        
                     </form>
                 </div>
             </div>
